@@ -35,15 +35,56 @@
         <div class="">
             <h3 class="text-3xl font-semibold">Search your phone</h3>
             <label class="input input-bordered w-[750px] mx-auto flex my-7 items-center gap-2 pr-0">
-                <input type="text" class="grow " placeholder="Search" />
+                <input id="search-field" type="text" class="grow " placeholder="Search" />
                 <button onclick="handleSearch()" class="btn btn-primary">Search</button>
             </label>
         </div>
 
-        <div id="card-container" class="grid grid-cols-1 md:grid-cols-3 gap-7">
-            
-        </div>
-        <button class="btn btn-primary mt-14">Show All</button>
+        <section>
+            <!-- spinner -->
+            <div id="loading-spinner" class="my-40 hidden">
+                <span class="loading loading-spinner loading-lg"></span>
+            </div>
+            <!-- search result -->
+            <div id="card-container" class="grid grid-cols-1 md:grid-cols-3 gap-7 ">
+
+            </div>
+            <!-- show all -->
+            <div id="show-all-container" class="hidden">
+                <button onclick="handleShowAll()" class="btn btn-primary mt-14">Show All</button>
+            </div>
+        </section>
+
+        <!-- Open the modal using ID.showModal() method -->
+        <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                
+
+                <div id="show-detail-container" class="space-y-4">
+                    <!-- <img src="" alt="">
+                    <h3 class="text-2xl"></h3>
+                    <p></p>
+                    <p><span class="text-lg font-semibold">Brand: </span></p>
+                    <p><span class="text-lg font-semibold">Storage: </span></p>
+                    <p><span class="text-lg font-semibold">Display Size: </span></p>
+                    <p><span class="text-lg font-semibold">Chipset: </span></p>
+                    <p><span class="text-lg font-semibold">Memory: </span></p>
+                    <p><span class="text-lg font-semibold">Slug: </span></p>
+                    <p><span class="text-lg font-semibold">Release Data: </span></p>
+                    <p><span class="text-lg font-semibold">GPS: </span></p> -->
+                </div>
+
+                <!-- <h3 class="font-bold text-lg">Hello!</h3>
+                <p class="py-4">Press ESC key or click the button below to close</p> -->
+                <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn bg-[#DC3545] text-lg font-semibold text-white">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+
 
     </main>
     <footer>
